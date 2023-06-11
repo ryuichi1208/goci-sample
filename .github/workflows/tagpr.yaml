@@ -21,7 +21,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: push
-        if: startsWith( github.ref, 'refs/tags/v' )
         shell: bash
         run: |
           echo 'deb [trusted=yes] https://repo.goreleaser.com/apt/ /' | sudo tee /etc/apt/sources.list.d/goreleaser.list
