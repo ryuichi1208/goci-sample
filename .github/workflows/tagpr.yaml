@@ -14,7 +14,7 @@ jobs:
         shell: bash
         run: |
           echo 'deb [trusted=yes] https://repo.goreleaser.com/apt/ /' | sudo tee /etc/apt/sources.list.d/goreleaser.list
-          apt update
-          apt install -y goreleaser
+          sudo apt update
+          sudo apt install -y goreleaser
           git push origin main --tag
           goreleaser --clean
