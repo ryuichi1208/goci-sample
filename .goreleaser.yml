@@ -14,6 +14,8 @@ archives:
   - format: zip
     name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
     rlcp: true
+snapshot:
+  name_template: "{{ .Version }}-next"
 #release:
 #  github:
 #    owner: ryuichi1208
