@@ -12,7 +12,7 @@ builds:
 archives:
   - format: zip
     name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
-release:
-  github:
-    owner: ryuichi1208
-    name: goci-sample
+#release:
+#  github:
+#    owner: ryuichi1208
+#    name: goci-sample
