@@ -3,13 +3,22 @@ on:
   push:
     branches: ["main"]
 jobs:
-  deploy:
+  tagpr:
     runs-on: ubuntu-latest
+    outputs:
+      tagpr-tag: ${{ steps.run-tagpr.outputs.tag }}
     steps:
       - uses: actions/checkout@v3
-      - uses: Songmu/tagpr@main
+      - id: run-tagpr
+        uses: Songmu/tagpr@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  release:
+    runs-on: ubuntu-latest
+    if: needs.tagpr.outputs.tagpr-tag != ''
+    steps:
+      - uses: actions/checkout@v3
       - name: push
         if: startsWith( github.ref, 'refs/tags/v' )
         shell: bash
