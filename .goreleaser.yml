@@ -12,6 +12,7 @@ builds:
 archives:
   - format: zip
     name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
+    rlcp: true
 #release:
 #  github:
 #    owner: ryuichi1208
