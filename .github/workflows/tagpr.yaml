@@ -17,4 +17,4 @@ jobs:
           apt update
           apt install -y goreleaser
           git push origin main --tag
-          
+          goreleaser --clean
