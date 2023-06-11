@@ -10,3 +10,7 @@ jobs:
       - uses: Songmu/tagpr@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: push
+        shell: bash
+        run: |
+          git push origin main --tag && goreleaser --clean
