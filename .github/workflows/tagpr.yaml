@@ -18,3 +18,5 @@ jobs:
           sudo apt install -y goreleaser
           git push origin main --tag
           goreleaser --clean
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
