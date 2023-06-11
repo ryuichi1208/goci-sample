@@ -54,3 +54,4 @@ func TestCalc3(t *testing.T) {
 		}
 	}
 }
+
