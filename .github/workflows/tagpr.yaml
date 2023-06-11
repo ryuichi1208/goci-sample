@@ -17,6 +17,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     if: needs.tagpr.outputs.tagpr-tag != ''
+    needs: tagpr
     steps:
       - uses: actions/checkout@v3
       - name: push
